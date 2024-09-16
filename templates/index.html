@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const PUSHER_KEY = "{{ pusher_key }}";
+        const PUSHER_CLUSTER = "{{ pusher_cluster }}";
+    </script>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div id="game-setup">
+        <input type="text" id="game-id" placeholder="Enter game ID">
+        <button onclick="joinGame()">Join Game</button>
+    </div>
+    <div id="game-area" style="display: none;">
+        <h2>Game ID: <span id="current-game-id"></span></h2>
+        <button onclick="makeChoice('rock')">Rock</button>
+        <button onclick="makeChoice('paper')">Paper</button>
+        <button onclick="makeChoice('scissors')">Scissors</button>
+    </div>
+    <div id="result"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
